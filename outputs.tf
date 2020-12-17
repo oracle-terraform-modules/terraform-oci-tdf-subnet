@@ -5,7 +5,7 @@ output "subnets" {
   description = "The returned resource attributes for the subnets."
   value       = oci_core_subnet.this != null && length(oci_core_subnet.this) > 0 ? {
     for x in oci_core_subnet.this:
-      x.display_name => x
+      x.display_name => x...
   } : null
 }
 
